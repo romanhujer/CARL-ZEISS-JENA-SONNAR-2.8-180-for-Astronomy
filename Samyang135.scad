@@ -39,7 +39,8 @@ SUP=0;
 SUP2=0;
 ASIAIR=0;
 LISTA2=0;
-LISTA3=1;
+LISTA3=0;
+LISTA4=1;
 
 
 
@@ -452,7 +453,7 @@ if ( SUP == 1  ) {
 difference() {            
         translate([ 0,-55, 0 ]) cube([ 15, 10, 40]); 
     {
-        translate([ 0,-55, 0 ]) cube([ 10, 10, 14]); 
+        translate([ 0,-55, 0 ]) cube([ 10, 10, 14]);
         translate([0,-50,22.5-15]) rotate ([0,90,0])M3_dira_a();                
     }
 }
@@ -476,5 +477,26 @@ if ( LISTA3 == 1  ) {
   }    
 }   
 
+}
+
+if ( LISTA4 == 1  ) {
+difference(){
+union(){    
+    translate([-38/2,-90/2,0 ]) cube([ 38, 90, 14]  );
+    translate([0,30,0 ])cylinder(h=20, r=8.4/2, center=false, $fn=360);
+    translate([0,-30,0 ])cylinder(h=20, r=8.4/2, center=false, $fn=360); 
+    
+}   
+{
+     translate([0,0,0 ])cylinder(h=30, r=6.2/2, center=false, $fn=360);
+    
+    translate([0,15,0 ])cylinder(h=15, r=6.4/2, center=false, $fn=360);
+    translate([0,15,7 ])cylinder(h=8 , r=12.8/2, center=false, $fn=360);
+    translate([0,-15,0 ])cylinder(h=15, r=6.4/2, center=false, $fn=360);
+    translate([0,-15,7 ])cylinder(h=8, r=12.8/2, center=false, $fn=360);
+    
+ }
+
+}
 }
 
