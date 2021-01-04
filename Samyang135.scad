@@ -32,7 +32,7 @@ KRUH_P=0;
 KRUH_F=0;
 KRUH_F2=0;
 EAF=0;
-EAF_H=0;
+EAF_H=1;
 CAP=0;
 KNOB=0;
 SUP=0;
@@ -40,7 +40,7 @@ SUP2=0;
 ASIAIR=0;
 LISTA2=0;
 LISTA3=0;
-LISTA4=1;
+LISTA4=0;
 
 
 
@@ -104,6 +104,14 @@ module M8_dira_a(){
 }
 
 
+module kladka(){
+   union(){
+   cylinder(h=6, r=6.25, center=true, $fn=360);
+   translate([0,0,-45 ]) cylinder(h=50,r=2.25, center=false, $fn=360);    
+   translate([0,0,0 ]) cylinder(h=15,r=2.25, center=false, $fn=360);        
+}   
+    
+}
 
 
 module M4_imbus_B(){
@@ -424,8 +432,13 @@ translate([-50,-70, 61])rotate ([0,-30,0] )cube([40,15 ,14]);
 {
  translate([-63,-62.5,46+9 ]) rotate ([90,0,0] ) rotate ([0,90,0] )M4_imbus_B();
  translate([-63,-62,46-9] ) rotate ([90,0,0] ) rotate ([0,90,0] )M4_imbus_B();
+    
+ #translate([17.25,-63.2,68.5] ) kladka();
+ #translate([-17.25,-63.2,68.5] ) kladka();
+
 }
 }
+
 }
 
 
