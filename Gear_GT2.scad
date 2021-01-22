@@ -22,7 +22,7 @@
 
 
 
-module gear(teeth = 40) {
+module gearGT2(teeth = 40) {
 
 
 
@@ -43,7 +43,7 @@ idler_ht = 1.5;		// height of idler flange over pulley, standard = 1.5
 
 pulley_t_ht = 9;	// length of toothed part of pulley, standard = 12
 pulley_b_ht = 7;		// pulley base height, standard = 8. Set to same as idler_ht if you want an idler but no pulley.
-pulley_b_dia = 18;	// pulley base diameter, standard = 20
+pulley_b_dia = 0;	// pulley base diameter, standard = 20
 no_of_nuts = 0;		// number of captive nuts required, standard = 1
 nut_angle = 120;		// angle between nuts, standard = 90
 nut_shaft_distance = 1.2;	// distance between inner face of nut and shaft, can be negative.
