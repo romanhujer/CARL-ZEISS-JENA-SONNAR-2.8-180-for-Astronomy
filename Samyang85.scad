@@ -536,15 +536,16 @@ if (ARC_PATKA == 1){
  
 
 difference() {
-translate([0,-25,3])cube([50,50,16]);
+translate([0,-27,3])cube([50,52,16]);
 
  {
 
  translate([0,0,-3])arcaplate2(50);               
 translate([25,0,10.5]) M5_imbus_A();
-translate([0,-5,8])cube([50,10,3.5]);
-#translate([0,-20.5,7])cube([50,41,2]);     
-translate([25,-12, 7.25 ] ) rotate([0,180,0]) M3_dira_b();          
+#translate([0,-5,7])cube([50,10,3.5]);
+translate([0,-5,7])cube([50,10,3.5]);     
+translate([0,-20.5,6.5])cube([50,41,1.5]);     
+translate([25,-13, 4 ] ) rotate( [-15,0,0]) rotate([0,180,0]) M3_dira_b();          
  }   
     
 }
