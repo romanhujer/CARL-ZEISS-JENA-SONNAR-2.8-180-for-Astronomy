@@ -21,8 +21,8 @@
 */
 
 
-LISTA=0;
-KRUH_Z=1;
+LISTA=1;
+KRUH_Z=0;
 KRUH_P=0;
 KRUH_F=0;
 CAP=0;
@@ -78,7 +78,7 @@ translate([10,0,10 ])cube([20,rv2,hm], center=true);
 
 module M8_dira_a(){
  
- rv2=13.1;
+ rv2=13.8;
  hm = 6.8;
     
  union(){  
@@ -237,19 +237,34 @@ translate([-78,0, 55] )rotate ([0,90,0])
  difference(){
   dovetail(width=44,length=174, height=15, angle=15);
   {  
-     cylinder(h=30, r=8.8/2, center=false, $fn=360);
-     translate([28,0,0 ])cylinder(h=30, r=5.2/2, center=false, $fn=360);
-     translate([-28,0,0 ])cylinder(h=30, r=5.2/2, center=false, $fn=360);
+
+     cylinder(h=30, r=7/2, center=false, $fn=360);
+     cylinder(h=8, r=17/2,  center=false, $fn=360);
+     translate ([ 15,0,0]) cylinder(h=30, r=7/2, center=false, $fn=360);
+     translate ([ 15,0,0]) cylinder(h=10, r=18/2,  center=false, $fn=360);
+     translate ([-15,0,0]) cylinder(h=30, r=7/2, center=false, $fn=360);
+     translate ([-15,0,0]) cylinder(h=10, r=18/2,  center=false, $fn=360);
+     translate ([ 30,0,0]) cylinder(h=30, r=7/2, center=false, $fn=360);
+     translate ([ 30,0,0]) cylinder(h=10, r=18/2,  center=false, $fn=360);
+     translate ([-30,0,0]) cylinder(h=30, r=7/2, center=false, $fn=360);
+     translate ([-30,0,0]) cylinder(h=10, r=18/2,  center=false, $fn=360);
+     translate ([ 45,0,0]) cylinder(h=30, r=7/2, center=false, $fn=360);
+     translate ([ 45,0,0]) cylinder(h=10, r=18/2,  center=false, $fn=360);
+     translate ([-45,0,0]) cylinder(h=30, r=7/2, center=false, $fn=360);
+     translate ([-45,0,0]) cylinder(h=10, r=18/2,  center=false, $fn=360);
       
-  translate([141/2,0, 7.5]) M8_dira_a();
-  translate([-141/2,0, 7.5]) rotate ([0,0,180])M8_dira_a();
+//     translate([28,0,0 ])cylinder(h=30, r=5.2/2, center=false, $fn=360);
+//     translate([-28,0,0 ])cylinder(h=30, r=5.2/2, center=false, $fn=360);
+      
+  translate([140/2,0, 7.5]) M8_dira_a();
+  translate([-140/2,0, 7.5]) rotate ([0,0,180])M8_dira_a();
   }    
 }   
-translate([-78,13.5, 15] )  rotate ([90,0,90] )M4_imbus_B();
-translate([-78,-13.5, 15] )  rotate ([-90,0,-90] )M4_imbus_B();
+//tanslate([-78,13.5, 15] )  rotate ([90,0,90] )M4_imbus_B();
+//translate([-78,-13.5, 15] )  rotate ([-90,0,-90] )M4_imbus_B();
 
-translate([-78,13.5, 136 ] ) rotate ([90,0,0] ) rotate ([90,0,90] )M4_imbus_B();
-translate([-78,-13.5, 136] ) rotate ([-90,0,0] ) rotate ([-90,0,-90] )M4_imbus_B();
+//translate([-78,13.5, 136 ] ) rotate ([90,0,0] ) rotate ([90,0,90] )M4_imbus_B();
+//translate([-78,-13.5, 136] ) rotate ([-90,0,0] ) rotate ([-90,0,-90] )M4_imbus_B();
 
 
 }
