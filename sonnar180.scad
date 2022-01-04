@@ -235,29 +235,29 @@ if ( LISTA == 1  ) {
 difference() {
 translate([-78,0, 55] )rotate ([0,90,0])
  difference(){
-  dovetail(width=44,length=174, height=15, angle=15);
+  dovetail(width=44,length=106, height=15, angle=15);
   {  
 
-     cylinder(h=30, r=7/2, center=false, $fn=360);
-     cylinder(h=8, r=17/2,  center=false, $fn=360);
+     cylinder(h=30, r=6/2, center=false, $fn=360);
+     cylinder(h=9, r=17/2,  center=false, $fn=360);
      translate ([ 15,0,0]) cylinder(h=30, r=7/2, center=false, $fn=360);
-     translate ([ 15,0,0]) cylinder(h=10, r=18/2,  center=false, $fn=360);
+     translate ([ 15,0,0]) cylinder(h=9, r=18/2,  center=false, $fn=360);
      translate ([-15,0,0]) cylinder(h=30, r=7/2, center=false, $fn=360);
-     translate ([-15,0,0]) cylinder(h=10, r=18/2,  center=false, $fn=360);
-     translate ([ 30,0,0]) cylinder(h=30, r=7/2, center=false, $fn=360);
-     translate ([ 30,0,0]) cylinder(h=10, r=18/2,  center=false, $fn=360);
-     translate ([-30,0,0]) cylinder(h=30, r=7/2, center=false, $fn=360);
-     translate ([-30,0,0]) cylinder(h=10, r=18/2,  center=false, $fn=360);
-     translate ([ 45,0,0]) cylinder(h=30, r=7/2, center=false, $fn=360);
-     translate ([ 45,0,0]) cylinder(h=10, r=18/2,  center=false, $fn=360);
-     translate ([-45,0,0]) cylinder(h=30, r=7/2, center=false, $fn=360);
-     translate ([-45,0,0]) cylinder(h=10, r=18/2,  center=false, $fn=360);
+     translate ([-15,0,0]) cylinder(h=9, r=18/2,  center=false, $fn=360);
+//     translate ([ 30,0,0]) cylinder(h=30, r=7/2, center=false, $fn=360);
+//     translate ([ 30,0,0]) cylinder(h=10, r=18/2,  center=false, $fn=360);
+//     translate ([-30,0,0]) cylinder(h=30, r=7/2, center=false, $fn=360);
+//     translate ([-30,0,0]) cylinder(h=10, r=18/2,  center=false, $fn=360);
+     translate ([ 48,0,0]) cylinder(h=30, r=4/2, center=false, $fn=360);
+//     translate ([ 45,0,0]) cylinder(h=10, r=18/2,  center=false, $fn=360);
+     translate ([-48,0,0]) cylinder(h=30, r=4/2, center=false, $fn=360);
+//     translate ([-45,0,0]) cylinder(h=10, r=18/2,  center=false, $fn=360);
       
 //     translate([28,0,0 ])cylinder(h=30, r=5.2/2, center=false, $fn=360);
 //     translate([-28,0,0 ])cylinder(h=30, r=5.2/2, center=false, $fn=360);
       
-  translate([140/2,0, 7.5]) M8_dira_a();
-  translate([-140/2,0, 7.5]) rotate ([0,0,180])M8_dira_a();
+//  translate([140/2,0, 7.5]) M8_dira_a();
+//  translate([-140/2,0, 7.5]) rotate ([0,0,180])M8_dira_a();
   }    
 }   
 //tanslate([-78,13.5, 15] )  rotate ([90,0,90] )M4_imbus_B();
