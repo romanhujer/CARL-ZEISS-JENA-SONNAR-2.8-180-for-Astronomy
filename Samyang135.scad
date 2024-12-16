@@ -27,9 +27,9 @@ include <Gear_GT2.scad>;
 
 FINDER=0;
 LISTA=0;
-LISTA1=1;
+LISTA1=0;
 
-KRUH_Z2=0;
+KRUH_Z2=1;
 KRUH_P2=0;
 KRUH_Z=0;
 KRUH_P=0;
@@ -45,6 +45,7 @@ ASIAIR=0;
 LISTA2=0;
 LISTA3=0;
 LISTA4=0;
+GG=0;
 
 
 
@@ -136,7 +137,7 @@ module M4_imbus_B(){
  translate([0,0,-0.5 ]) cylinder(h=4.7, r=7.3/2, center=false, $fn=360);
  cylinder(h=26, r=4.2/2, center=false, $fn=360);
  translate([0,0,20 ])    union(){  
-      cylinder(h=hm, r=rv2/1.732, center=false, $fn=6, center=true);
+      cylinder(h=hm, r=rv2/1.732, center=false, $fn=6 );
       translate([7.5,0,0 ])cube([15,rv2,hm], center=true);
   }
 }
@@ -509,9 +510,10 @@ if ( LISTA3 == 1  ) {
 if ( LISTA4 == 1  ) {
 difference(){
 union(){    
-    translate([-38/2,-90/2,0 ]) cube([ 38, 90, 14]  );
+    translate([0,0,15 ])rotate([180,0,0 ]) rotate([0,0,90 ])   dovetail(width=44,length=90, height=15, angle=15);
+//    translate([-38/2,-90/2,0 ]) cube([ 38, 90, 14]  );
     translate([0,30,0 ])cylinder(h=20, r=8.4/2, center=false, $fn=360);
-    translate([0,-30,0 ])cylinder(h=20, r=8.4/2, center=false, $fn=360); 
+//    translate([0,-30,0 ])cylinder(h=20, r=8.4/2, center=false, $fn=360); 
     
 }   
 {
@@ -562,22 +564,44 @@ module objimka_zadni2() {
  
 difference(){
   union(){  
-      
- translate([-10,-55,16 ]) cube([ 20, 2*55, 14]); 
+translate([-21,0,0 ]) cube([ 42, 112, 6]);       
+translate([20,-57,0 ]) rotate ([0,-90,-70])  difference() {
+        translate([0,-55/2, 2 ] )cube([30,55,25]);
+        arcaplate(40);  
+       }    
+       
+/// translate([-10,-55,16 ]) cube([ 20, 2*55, 14]); 
  cylinder(h=30, r=46, center=false, $fn=360);
  translate([-63,-19, 0]) cube([30,38 ,30]);     
 // translate([60,0,20 ]) rotate ([180,0,0]) rotate ([0,90,0]) finder_patka();    
- translate([40,-24,16 ]) cube([15,48 ,14 ]);          
+ translate([40,-24,0 ]) cube([15,48 ,30 ]);          
   }
  {
+     translate([0,62,-1]) {
+     cylinder(h=12, r=12, center=false, $fn=360);
+     translate([0,10,0]) cylinder(h=12, r=12, center=false, $fn=360);
+     translate([-12,0,0]) cube([ 24, 10, 12]);
+    }
+   translate([9,62+34,-1]) {
+     cylinder(h=12, r=2.2, center=false, $fn=360);
+     translate([0,10,0]) cylinder(h=12, r=2.2, center=false, $fn=360);
+     translate([-2.2,0,0]) cube([ 4.4, 10, 12]);
+    }
+   translate([-9,62+34,-1]) {
+     cylinder(h=12, r=2.2, center=false, $fn=360);
+     translate([0,10,0]) cylinder(h=12, r=2.2, center=false, $fn=360);
+     translate([-2.2,0,0]) cube([ 4.4, 10, 12]);
+    }
+    
+     
+     
   cylinder(h=30, r=35.5, center=false, $fn=360);
-  translate([0,0,14 ])cylinder(h=20, r=33.5, center=false, $fn=360);
-  translate([0,0,20 ])cylinder(h=15, r=35.5, center=false, $fn=360);   
-  translate([-2,-55,0 ]) cube([ 4, 2*55, 30]);
- translate([-10.1,50,22.5]) rotate ([0,90,0])M3_dira_a();     
- translate([-10.1,-50,22.5]) rotate ([0,90,0])M3_dira_a();        
-  cylinder(h=16, r=46, center=false, $fn=360);
-  translate([-46,-19, 0]) cube([10,38 ,16]);     
+  translate([0,0,14 ])cylinder(h=20, r=34, center=false, $fn=360);
+  translate([0,0,20 ])cylinder(h=15, r=36, center=false, $fn=360);   
+// translate([-2,-55,0 ]) cube([ 4, 2*55, 30]);
+// translate([-10.1,50,22.5]) rotate ([0,0,0])M3_dira_a();   translate([-10.1,-50,22.5]) rotate ([0,0,0])M3_dira_a();        
+  cylinder(h=16, r=78/2, center=false, $fn=360);
+// translate([-46,-19, 0]) cube([10,38 ,16]);     
      
  }    
 }
@@ -646,13 +670,17 @@ if ( KRUH_Z2 == 1  ) {
      
 translate([-78,13.5, 15] )  rotate ([90,0,90] )M4_imbus_B();
 translate([-78,-13.5, 15] )  rotate ([-90,0,-90] )M4_imbus_B();
-translate([70, 13.5,  7 ] ) rotate ([0,-90, 0] )  M4_imbus_B();
-translate([70, -13.5, 7 ] ) rotate ([0,-90,0] )  M4_imbus_B();
+translate([70, 13.5,  7 ] ) rotate ([0,-90, 0]) rotate ([0,0,180]) M4_imbus_B();
+translate([70, -13.5, 7 ] ) rotate ([0,-90,0]) rotate ([0,0,180])  M4_imbus_B();
      
      
   }
     
 }
+
+
+
+
 if ( FINDER == 1  ) {
     h=76;
 difference(){    
@@ -666,11 +694,28 @@ translate([65,0, 45.5,])  rotate ([0,90,0])
 translate([65, 13.5,  7 ] ) rotate ([0,-90, 0] )  M4_imbus_B();
 translate([65, -13.5, 7 ] ) rotate ([0,-90,0] )  M4_imbus_B();
 
-translate([65,13.5, h+7.5 ] ) rotate ([0,-90, 0] ) rotate ([0,0,180])M4_imbus_B();
-translate([65,-13.5, h+7.5 ] ) rotate ([0,-90,0] ) rotate ([0,0,180]) M4_imbus_B();
+#translate([65,13.5, h+7.5 ] ) rotate ([0,-90, 0] ) rotate ([0,0,0])M4_imbus_B();
+#translate([65,-13.5, h+7.5 ] ) rotate ([0,-90,0] ) rotate ([0,0,0]) M4_imbus_B();
 }   
 }
 }
 
-
+if ( GG == 1  ) {
+ difference() {
+  union() {     
+  gearGT2(130);     
+//  EvGerar(1, 80, 14);
+// translate([0,0,8]) cylinder(h=8, r=79.5/2, center=false, $fn=360);
+  
+  }
+  cylinder(h=29, r=77.2/2, center=false, $fn=360);  
+  
+//  translate([0,0,18])    for ( i = [0, 1, 2] ) { 
+//      rotate([ 0,0,i*120]) { rotate([0,90,0]) cylinder(h=40, r=1.25, center=false, $fn=360);  }    
+//     }
+ 
+  
+  }
+    
+}
 
